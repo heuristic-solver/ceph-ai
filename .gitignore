@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Database (too large, auto-created fresh on first run)
+*.db
+ceph_monitor.db
+
+# Logs
+*.log
+
+# Environment variables (colleague must create their own from .env.example)
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
