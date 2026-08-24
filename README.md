@@ -19,15 +19,20 @@ An AI-driven telemetry monitoring, anomaly detection, and automated root cause a
 
 ## Prerequisites
 
-### 1. Host Machine
+### 1. Host Machine (Laptop / PC)
 * **Python 3.10+**
 * (Optional) **Ollama** running locally on port `11434` with model `qwen2.5:3b` or `gemma` (if Ollama is offline, the built-in dynamic heuristic engine takes over automatically).
 
-### 2. VirtualBox Ceph VM
-* The Ceph storage virtual machine running on VirtualBox.
+### 2. Ceph Storage VM (VirtualBox / KVM / Cloud)
+* Any Linux VM with Ceph running.
 * **VirtualBox NAT Port Forwarding Rules**:
   * Host Port `2222` -> Guest Port `22` (SSH)
   * Host Port `19999` -> Guest Port `19999` (Netdata Telemetry)
+* **Netdata on the VM**:
+  If Netdata is not already installed on the VM, install it by running this single command inside the VM:
+  ```bash
+  wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sudo sh /tmp/netdata-kickstart.sh --non-interactive
+  ```
 
 ---
 
@@ -47,7 +52,7 @@ pip install -r requirements.txt
 ```
 
 ### 2. Configure Environment Variables
-Copy `.env.example` to `.env` and adjust the VM SSH credentials if needed:
+Copy `.env.example` to `.env` and set your VM SSH username and password:
 ```bash
 cp .env.example .env
 ```
