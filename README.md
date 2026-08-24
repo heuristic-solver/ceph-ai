@@ -94,21 +94,16 @@ Presents a menu of all 7 supported failure scenarios:
 
 ---
 
-## 🧪 Running Automated Validation Suites
+## 🧪 Running Automated Live Validation Suites
 
-### 1. Live End-to-End Cluster RCA Validation (7/7 Scenarios)
-Runs all 7 faults consecutively on the live VM, validates detection, verifies RCA diagnostic classification, and confirms clean cluster recovery:
+### 1. Live End-to-End Cluster RCA Validation (7/7 Live Scenarios)
+Runs all 7 faults consecutively on the live VM, validates real-time anomaly detection, verifies RCA diagnostic classification, and confirms clean cluster recovery:
 ```bash
 python run_live_rca_validation.py
 ```
 
-### 2. Offline Unit Test for the RCA Engine
-Validates the dynamic diagnostic engine and classification logic against synthetic telemetry:
-```bash
-python test_rca_engine.py
-```
-
-### 3. Automated Anomaly Detection Regression Suite
+### 2. Live Anomaly Detection Regression Suite
+Executes the full suite of live fault injections against the VM to validate host-layer and Ceph-layer model responses:
 ```bash
 python run_scenario_tests.py
 ```
