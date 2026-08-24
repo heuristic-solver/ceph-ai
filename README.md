@@ -4,7 +4,7 @@ An AI-driven telemetry monitoring, anomaly detection, and automated root cause a
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 1. **Dual-Layer Anomaly Detection**:
    * **Host Layer (v7)**: Monitors OS-level CPU, memory pressure (PSI), and storage I/O using an unsupervised 3-model ensemble (Isolation Forest + One-Class SVM + PCA Reconstruction) with temporal persistence filtering.
@@ -17,7 +17,7 @@ An AI-driven telemetry monitoring, anomaly detection, and automated root cause a
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 ### 1. Host Machine
 * **Python 3.10+**
@@ -26,12 +26,12 @@ An AI-driven telemetry monitoring, anomaly detection, and automated root cause a
 ### 2. VirtualBox Ceph VM
 * The Ceph storage virtual machine running on VirtualBox.
 * **VirtualBox NAT Port Forwarding Rules**:
-  * Host Port `2222` $\to$ Guest Port `22` (SSH)
-  * Host Port `19999` $\to$ Guest Port `19999` (Netdata Telemetry)
+  * Host Port `2222` -> Guest Port `22` (SSH)
+  * Host Port `19999` -> Guest Port `19999` (Netdata Telemetry)
 
 ---
 
-## 🚀 Setup & Installation
+## Setup & Installation
 
 ### 1. Install Python Dependencies
 ```bash
@@ -65,7 +65,7 @@ OLLAMA_TIMEOUT=2
 
 ---
 
-## 🎮 How to Run the Live Interactive Demo
+## How to Run the Live Interactive Demo
 
 Open **two terminal windows** side-by-side:
 
@@ -90,11 +90,11 @@ Presents a menu of all 7 supported failure scenarios:
 6. `PG-Level Targeted Degradation` (Placement group redundancy loss)
 7. `Monitor Quorum Loss` (Monitor container stopped / control plane offline)
 
-*Select any scenario (1–7), observe Terminal 1 diagnose it, then press **ENTER** in Terminal 2 to stop the fault and restore the cluster.*
+*Select any scenario (1-7), observe Terminal 1 diagnose it, then press **ENTER** in Terminal 2 to stop the fault and restore the cluster.*
 
 ---
 
-## 🧪 Running Automated Live Validation Suites
+## Running Automated Live Validation Suites
 
 ### 1. Live End-to-End Cluster RCA Validation (7/7 Live Scenarios)
 Runs all 7 faults consecutively on the live VM, validates real-time anomaly detection, verifies RCA diagnostic classification, and confirms clean cluster recovery:
@@ -110,7 +110,7 @@ python run_scenario_tests.py
 
 ---
 
-## 🛠️ Handy Utility Scripts
+## Handy Utility Scripts
 
 * **Cluster Recovery Helper**:
   If the Ceph VM ever gets stuck in a degraded state after manual testing, run:
