@@ -29,8 +29,12 @@ An AI-driven telemetry monitoring, anomaly detection, and automated root cause a
   * Host Port `2222` -> Guest Port `22` (SSH)
   * Host Port `19999` -> Guest Port `19999` (Netdata Telemetry)
 * **Netdata on the VM**:
-  If Netdata is not already installed on the VM, install it by running this single command inside the VM:
+  If Netdata is not already installed on the VM, install it by running either command inside the VM:
   ```bash
+  # Option A (Ubuntu/Debian):
+  sudo apt-get update && sudo apt-get install -y netdata
+
+  # Option B (Universal Kickstart Script):
   wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sudo sh /tmp/netdata-kickstart.sh --non-interactive
   ```
 
